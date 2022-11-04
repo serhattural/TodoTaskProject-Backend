@@ -11,11 +11,15 @@ namespace TodoTask.DataAccess.EF.Context
 {
     public class TodoTaskDbContext : DbContext
     {
+        public TodoTaskDbContext() 
+        { 
+        }
+
         public TodoTaskDbContext(DbContextOptions<TodoTaskDbContext> options) : base(options)
         {
 
         }
 
-        public DbSet<TodoItem> TodoItems { get; set; }
+        public virtual DbSet<TodoItem> TodoItems { get; set; }
     }
 }
