@@ -7,7 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using TodoTask.Model.Entities;
 
-namespace TodoTask.DataAccess
+namespace TodoTask.DataAccess.EF.Context
 {
     public class TodoTaskDbContext : DbContext
     {

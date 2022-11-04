@@ -1,6 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using System;
-using TodoTask.DataAccess;
+using TodoTask.DataAccess.EF.Context;
 using TodoTask.Service;
 
 namespace TodoTask.Api.Extensions

@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using TodoTask.Model.Dtos;
-using TodoTask.DataAccess;
+using TodoTask.DataAccess.EF.Context;
 
 namespace TodoTask.Service
 {
