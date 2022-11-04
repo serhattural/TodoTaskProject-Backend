@@ -6,7 +6,7 @@ using System.Linq;
 using System.Reflection.Metadata;
 using System.Text;
 using System.Threading.Tasks;
-using TodoTask.Model.Entities;
+using TodoTask.DataAccess.Entities;
 
 namespace TodoTask.DataAccess.EF.Configuration
 {

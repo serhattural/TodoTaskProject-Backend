@@ -1,7 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using TodoTask.Model.Dtos;
-using TodoTask.Model.Entities;
 using TodoTask.Service;
 using static Microsoft.EntityFrameworkCore.DbLoggerCategory;
 
