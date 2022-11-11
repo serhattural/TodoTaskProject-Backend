@@ -38,11 +38,21 @@ namespace TodoTask.Service
             };
         }
 
+        public async Task DeleteTodoItem(int id)
+        {
+            TodoItem entity = await dbContext.TodoItems.SingleOrDefaultAsync(x => x.Id == id);
+
+            if (entity is null)
+                return;
+
+            dbContext.TodoItems.Remove(entity);
+            await dbContext.SaveChangesAsync();
+        }
+
         public async Task EditTodoItem(TodoItemEditDto dto)
         {
             TodoItem entity = await dbContext.TodoItems.SingleOrDefaultAsync(x => x.Id == dto.Id);
             
-            // There can be better ways to handle this. For simplicity to this task return.
             if (entity is null)
                 return; 
 

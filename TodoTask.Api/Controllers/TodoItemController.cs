@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using TodoTask.DataAccess.Entities;
 using TodoTask.Model.Dtos;
 using TodoTask.Service;
 using static Microsoft.EntityFrameworkCore.DbLoggerCategory;
@@ -64,6 +65,31 @@ namespace TodoTask.Api.Controllers
             await todoItemService.EditTodoItem(editDto);
 
             return NoContent();
+        }
+
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> DeleteTodoItemAsync(int id)
+        {
+            var dto = await todoItemQueryService.GetById(id);
+            if (dto is null)
+            {
+                return NotFound();
+            }
+
+            await todoItemService.DeleteTodoItem(id);
+            return NoContent();
+        }
+
+        [HttpGet("{id}")]
+        public async Task<ActionResult<TodoItemDto>> GetTodoItem(int id)
+        {
+            var item = await todoItemQueryService.GetById(id);
+            if (item == null)
+            {
+                return NotFound();
+            }
+
+            return item;
         }
 
         [HttpGet("pending")]

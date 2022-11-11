@@ -10,6 +10,7 @@ namespace TodoTask.Service
     public interface ITodoItemService
     {
         Task<TodoItemDto> CreateTodoItem(TodoItemCreateDto dto);
+        Task DeleteTodoItem(int id);
         Task EditTodoItem(TodoItemEditDto dto);
     }
 }
